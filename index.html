@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="modal/modal.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <!--container para levar a pagina de cadastro-->
+    <form class="container_cadastro" action="sign_up/sign_up.html">
+      <h1>Welcome Back!</h1>
+      <p>
+        To keep connected with us <br />
+        please login with your personal info.
+      </p>
+      <button type="submit">Sign-Up</button>
+    </form>
+
+    <!--container para logar e levar a pagina inicial-->
+    <div class="container_login">
+      <h2>Login</h2>
+      <form action="">
+        <label for="nome" class="visually-hidden">nome</label>
+        <input
+          type="text"
+          placeholder="nome do usuario"
+          id="nome"
+          autocomplete="name"
+        />
+        <label for="email" class="visually-hidden">email</label>
+        <input
+          type="email"
+          placeholder="email"
+          id="email"
+          autocomplete="email"
+        />
+        <label for="senha" class="visually-hidden">senha</label>
+        <input
+          type="password"
+          placeholder="senha"
+          id="senha"
+          autocomplete="current-password"
+        />
+
+        <button type="submit" id="enviar">entrar</button>
+      </form>
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

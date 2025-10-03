@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fundo: linear-gradient(
+    to right,
+    rgba(48, 228, 12, 0.726),
+    rgba(10, 20, 170, 0.979)
+  );
+  --preto: black;
+  --azul_escuro: rgba(7, 15, 128, 0.61);
+  --branco: aliceblue;
+  --azul_claro: rgba(3, 250, 196, 0.644);
+}
+
+body {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--fundo);
+}
+
+.sign-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 30px 10px 30px 5px var(--preto);
+
+  /* Tamanhos base */
+  width: 40%;
+  max-height: 60vh;
+  margin-top: 5%;
+  padding: 20px;
+  border: 1px solid var(--preto);
+  border-radius: 30px;
+  background-color: transparent;
+}
+
+h2 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(1.2em, 4vw, 1.9em);
+  margin-top: 6%;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  margin: clamp(0.4rem, 2.9%, 1em);
+  margin-bottom: 12px;
+  border: 1px solid var(--preto);
+}
+
+input:nth-of-type(1) {
+  margin-top: 5%;
+}
+
+.sign-container button {
+  margin: 1.6em 0px 8% 0px;
+  align-self: center;
+  width: 15vw;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(0.9em, 1.7vw, 1.4em);
+  font-weight: 400;
+  cursor: pointer;
+  background-color: var(--azul_escuro);
+  color: var(--branco);
+  transition: transform 0.6s, color 0.6s;
+}
+
+.sign-container button:hover {
+  transform: scale(1.1);
+  background-color: var(--azul_claro);
+}
+
+/*media query*/
+
+@media (max-width: 1080px) {
+  .sign-container {
+    width: 60%;
+    height: auto;
+  }
+
+  .input {
+    width: 70%;
+  }
+
+  .sign-container button {
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 2%;
+  }
+}
+
+@media (max-width: 620px) {
+  .sign-container {
+    width: 70%;
+    margin-top: 10%;
+    min-width: auto;
+  }
+
+  .sign-container button {
+    margin: 0;
+    width: 40%;
+  }
+
+  input {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  body {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sign-container {
+    width: 60%;
+    min-height: max-content;
+    margin-top: 0;
+  }
+
+  .sign-container button {
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 2%;
+  }
+}

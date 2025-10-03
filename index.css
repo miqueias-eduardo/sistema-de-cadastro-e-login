@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fundo: linear-gradient(
+    to right,
+    rgba(21, 151, 184, 0.808),
+    rgba(22, 207, 121, 0.5)
+  );
+  --verde: rgba(59, 194, 104, 0.507);
+  --verde_escuro: rgba(37, 163, 37, 0.527);
+  --verde_claro: rgb(16, 240, 16);
+  --branco: aliceblue;
+  --preto: black;
+}
+
+body {
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  background: var(--fundo);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*estilizando o primeiro container e seus componentes*/
+.container_cadastro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+  width: 45%;
+  min-height: 100vh;
+  border: 1px;
+  border-radius: 15px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+  background: var(--verde);
+  box-shadow: 10px 10px 10px 2px var(--preto);
+}
+
+.container_cadastro h1 {
+  color: var(--branco);
+  font-size: clamp(1em, 4.6vw, 4.8em);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.container_cadastro p {
+  font-size: clamp(0.89em, 1.8vw, 2.3em);
+}
+
+/*estilizando o segundo container e seus elementos*/
+
+.container_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  width: 45%;
+  min-height: 100vh;
+
+  border-radius: 15px;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+  background: var(--branco);
+  box-shadow: 10px 10px 10px 2px var(--preto);
+}
+
+input {
+  width: 70%;
+  padding: 1.3em;
+  padding-bottom: clamp(1.1em, 1.7vh, 2.2em);
+  padding-top: clamp(1.1em, 1.7vw, 1.8em);
+  margin: 1.3em;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+input::placeholder {
+  font-size: clamp(0.7rem, 1.6vw, 2.3em);
+}
+
+h2 {
+  justify-self: center;
+  align-self: auto;
+  margin-bottom: 8%;
+  font-size: clamp(1em, 4.3vw, 4.8em);
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/*escondendo o label*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+}
+/*estilizando o botão para os dois containers*/
+
+.container_cadastro button,
+.container_login button {
+  justify-self: end;
+  align-self: auto;
+
+  width: 40%;
+  margin-top: 5%;
+  padding: clamp(0.6em, 1vh, 2em);
+  cursor: pointer;
+  background-color: var(--verde_escuro);
+  color: var(--branco);
+  font-size: clamp(0.7em, 1.8vw, 1.9em);
+}
+
+.container_cadastro button:hover,
+.container_login button:hover {
+  background-color: var(--verde_claro);
+}
+
+/*media query*/
+
+@media (max-width: 660px) {
+  .container_cadastro,
+  .container_login {
+    width: 45%;
+    min-width: auto;
+    min-height: auto;
+    height: clamp(60%, 70vh, 80vh);
+  }
+
+  input {
+    width: 80%;
+    padding: 0.7em;
+    margin: 1.4em;
+  }
+
+  input::placeholder {
+    font-size: 0.99em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  .container_cadastro button,
+  .container_login button {
+    width: 41%;
+  }
+}
